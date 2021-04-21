@@ -7,12 +7,12 @@
 </mat-card-actions>
 
 <div style="margin-bottom: 10px">
-  <a mat-mini-fab routerLink="/bookstores/create" color="primary">
+  <a mat-mini-fab routerLink="/createbookstore" color="primary">
     <mat-icon>add</mat-icon>
   </a>
 </div>
 
-<div style="margin-bottom: 10px" *ngFor="let bookstore of bookstores">
+<div style="margin-bottom: 10px" *ngFor="let bookstore of bookstores$ | async">
   <mat-card>
     <mat-card-header>
       <div mat-card-avatar>

@@ -23,6 +23,8 @@ import { environment } from "./environments/environment";
 import { RequestService } from "./request.service";
 import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
+import { AuthorService } from "./author.service";
+import { BookstoreService } from "./bookstore.service";
 
 //import { httpInterceptorProviders } from './http-interceptors';
 //import { AuthService } from './auth.service';
@@ -44,10 +46,11 @@ import { HttpClientModule } from "@angular/common/http";
       { path: "", component: HelloComponent },
       { path: "books", component: BookListComponent },
       { path: "books/:isbn", component: BookDetailsComponent },
-      { path: "create", component: BookCreateComponent },
+      { path: "createbook", component: BookCreateComponent },
       { path: "authors", component: AuthorListComponent },
-      { path: "authors/create", component: AuthorCreateComponent },
+      { path: "createauthor", component: AuthorCreateComponent },
       { path: "bookstores", component: BookstoreListComponent },
+      { path: "createbookstore", component: BookstoreCreateComponent },
       { path: "**", redirectTo: "" }
     ]),
     ReactiveFormsModule,
@@ -69,6 +72,12 @@ import { HttpClientModule } from "@angular/common/http";
     AuthorCreateComponent
   ],
   bootstrap: [AppComponent],
-  providers: [BookService, InMemoryBookService, RequestService]
+  providers: [
+    BookService,
+    InMemoryBookService,
+    RequestService,
+    AuthorService,
+    BookstoreService
+  ]
 })
 export class AppModule {}
