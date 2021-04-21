@@ -1,32 +1,38 @@
-<h2>Books</h2>
+<div style="margin:2rem">
+  <h2>Books</h2>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 
-<mat-card-actions>
-  <a mat-button [routerLink]="['/']">
-    <b>Go back</b>
-  </a>
-</mat-card-actions>
+  <mat-card-actions>
+    <a mat-button [routerLink]="['/']">
+      <b>Go back</b>
+    </a>
+  </mat-card-actions>
 
-<div style="margin-bottom: 10px">
-  <a mat-mini-fab routerLink="/createbook" color="primary">
-    <mat-icon>add</mat-icon>
-  </a>
-</div>
+  <div style="margin-bottom: 10px">
+    <a mat-mini-fab routerLink="/createbook" color="primary">
+      <mat-icon>add</mat-icon>
+    </a>
+  </div>
 
-<div style="margin-bottom: 10px" *ngFor="let book of books$ | async">
-  <mat-card>
-    <mat-card-header>
-      <div mat-card-avatar>
-        <i class="material-icons">event</i>
-      </div>
-      <mat-card-title>
-        <a mat-button [title]="book.title + ' details'" [routerLink]="['/books', book.id]">
-          <b>{{book.title}}</b>
-        </a>
-      </mat-card-title>
-      <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
-      <mat-card-subtitle>{{book.published}}</mat-card-subtitle>
-    </mat-card-header>
-  </mat-card>
+  <div style="margin-bottom: 10px;" *ngFor="let book of books$ | async">
+    <mat-card style="background-color: #f0f9ff">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <i class="material-icons">menu_book</i>
+        </div>
+        <mat-card-title>
+          <b [routerLink]="['/books', book.id]">{{book.title}}</b>
+        </mat-card-title>
+        <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
+        <mat-card-subtitle>{{book.published}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions align="end">
+        <button title="Edit book" (click)="onTest()" mat-raised-button color="accent"><i class="material-icons">mode_edit</i></button>
+        <button title="Delete book" (click)="onDeleteBook(book.id)" mat-raised-button color="warn">
+          <i class="material-icons">remove_circle</i>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>

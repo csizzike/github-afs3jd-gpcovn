@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { filter } from "rxjs/operators";
 import { RequestService } from "./request.service";
 
 const BOOK_URL = "api/books";
@@ -43,6 +44,7 @@ export class BookService {
       })
     };
     const url = `${BOOK_URL}/${id}`;
+    console.log("Deleted book with ID " + id);
     return this.requestService.delete(url, httpOptions);
   }
 }

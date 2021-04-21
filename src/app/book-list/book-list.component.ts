@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable, Subscription } from "rxjs";
+import { Observable, Subscription, from } from "rxjs";
+import { map, filter } from "rxjs/operators";
 import { BookService } from "../book.service";
 
 @Component({
@@ -14,7 +15,18 @@ export class BookListComponent implements OnInit {
   books;
 
   ngOnInit() {
-    this.books$ = this.bookService.getBooks();
-    this.books$.subscribe(result => (this.books = result));
+    this.books$ = this.bookService
+      .getBooks()
+      .pipe
+      //map(books => books.filter(book => book.author == 'Tolkien, J.R.'))
+      ();
+  }
+
+  onTest() {
+    console.log("test");
+  }
+
+  onDeleteBook(id) {
+    this.bookService.deleteBook(id);
   }
 }
