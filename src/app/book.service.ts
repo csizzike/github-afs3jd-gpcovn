@@ -7,7 +7,10 @@ const BOOK_URL = "api/books";
 
 @Injectable()
 export class BookService {
-  constructor(private requestService: RequestService) {}
+  constructor(
+    private requestService: RequestService,
+    private http: HttpClient
+  ) {}
 
   getBooks(): Observable<any> {
     const httpOptions = {
@@ -18,12 +21,13 @@ export class BookService {
     return this.requestService.get(BOOK_URL, httpOptions);
   }
 
-  getBook(isbn) {
+  getBook(id): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
     };
-    return this.requestService.get("${BOOK_URL}/${isbn}", httpOptions);
+    const url = `${BOOK_URL}/${id}`;
+    return this.requestService.get(url, httpOptions);
   }
 }

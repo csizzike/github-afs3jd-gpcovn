@@ -14,12 +14,14 @@ export class BookDetailsComponent implements OnInit {
   ) {}
 
   books = [];
-
   book: any = {};
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.book = this.bookService.getBook(+params.get("isbn"));
+      console.log(params)
+      this.bookService.getBook(+params.get("isbn")).subscribe(result => {
+        this.book = result;
+      });
     });
   }
 }
