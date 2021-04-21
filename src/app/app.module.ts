@@ -25,7 +25,8 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { AuthorService } from "./author.service";
 import { BookstoreService } from "./bookstore.service";
-import { BookEditComponent } from './book-edit/book-edit.component';
+import { BookEditComponent } from "./book-edit/book-edit.component";
+import { MatOptionModule } from "@angular/material/core";
 
 //import { httpInterceptorProviders } from './http-interceptors';
 //import { AuthService } from './auth.service';
@@ -55,6 +56,7 @@ import { BookEditComponent } from './book-edit/book-edit.component';
       { path: "**", redirectTo: "" }
     ]),
     ReactiveFormsModule,
+    MatOptionModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,
