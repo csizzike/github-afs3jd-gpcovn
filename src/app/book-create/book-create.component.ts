@@ -9,7 +9,7 @@ import { BookService } from "../book.service";
   styleUrls: ["./book-create.component.css"]
 })
 export class BookCreateComponent implements OnInit {
-  eventForm: FormGroup;
+  bookForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,7 +25,7 @@ export class BookCreateComponent implements OnInit {
       this.newBookId = result.length + 1;
     });
 
-    this.eventForm = this.formBuilder.group({
+    this.bookForm = this.formBuilder.group({
       id: "",
       isbn: "",
       title: "",
@@ -38,6 +38,6 @@ export class BookCreateComponent implements OnInit {
   onSubmit(eventData) {
     eventData.id = this.newBookId;
     alert("Form submitted: \n" + JSON.stringify(eventData));
-    this.eventForm.reset();
+    this.bookForm.reset();
   }
 }

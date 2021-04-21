@@ -47,6 +47,14 @@ export class BookTable {
       author: "Sir Arthur Conan Doyle",
       published: 1892,
       pages: 307
+    },
+    {
+      id: 7,
+      isbn: 9780618894642,
+      title: "The Children of Húrin",
+      author: "Tolkien, J.R.",
+      published: 2007,
+      pages: 320
     }
   ];
 }

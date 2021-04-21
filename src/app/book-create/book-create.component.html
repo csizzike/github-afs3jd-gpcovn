@@ -1,46 +1,42 @@
-<router-outlet></router-outlet>
-<h3>Create new event</h3>
-<p>
-  <a mat-button routerLink="/books" color="primary">
-    <b>Back to events</b>
-  </a>
-</p>
-<form [formGroup]="eventForm" (ngSubmit)="onSubmit(eventForm.value)">
-  <div>
-    <mat-form-field appearance="outline">
-      <mat-label>ISBN number</mat-label>
-      <input matInput placeholder="ISBN" formControlName="isbn">
-      <mat-hint>Give the book an ISBN identifier</mat-hint>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="outline">
-      <mat-label>Book title</mat-label>
-      <input matInput placeholder="Title" formControlName="title">
-      <mat-hint>Give the book a title</mat-hint>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="outline">
-      <mat-label>Books's author</mat-label>
-      <input matInput placeholder="Author" formControlName="author">
-      <mat-hint>Give the book an author</mat-hint>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="outline">
-      <mat-label>Books's publication year</mat-label>
-      <input matInput placeholder="Publication year" formControlName="published">
-      <mat-hint>Give the book a publication year</mat-hint>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="outline">
-      <mat-label>Books's page number</mat-label>
-      <input matInput placeholder="Pages" formControlName="pages">
-      <mat-hint>Give the book a page number</mat-hint>
-    </mat-form-field>
-  </div>
+<div style="margin: 2rem">
+  <h3>Create a new book</h3>
+  <p>
+    <a mat-button routerLink="/books" color="primary">
+      <b>Back to books</b>
+    </a>
+  </p>
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit(bookForm.value)">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>ISBN number</mat-label>
+        <input matInput placeholder="ISBN" formControlName="isbn">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Book title</mat-label>
+        <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Books's author</mat-label>
+        <input matInput placeholder="Author" formControlName="author">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Books's publication year</mat-label>
+        <input matInput placeholder="Publication year" formControlName="published">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Books's page number</mat-label>
+        <input matInput placeholder="Pages" formControlName="pages">
+      </mat-form-field>
+    </div>
 
-  <button mat-raised-button color="primary" type>Create</button>
-</form>
+    <button mat-raised-button color="primary" type>Create</button>
+  </form>
+</div>

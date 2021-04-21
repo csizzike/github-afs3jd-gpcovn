@@ -1,7 +1,30 @@
-<h1>Create Author is here</h1>
+<div style="margin: 2rem">
+  <h3>Create a new author</h3>
+  <p>
+    <a mat-button routerLink="/authors" color="primary">
+      <b>Back to authors</b>
+    </a>
+  </p>
+  <form [formGroup]="authorForm" (ngSubmit)="onSubmit(authorForm.value)">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Year of born</mat-label>
+        <input matInput placeholder="Year of born" formControlName="born">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Nation</mat-label>
+        <input matInput placeholder="Nation" formControlName="nation">
+      </mat-form-field>
+    </div>
 
-<mat-card-actions>
-  <a mat-button [routerLink]="['/authors']">
-    <b>Go back</b>
-  </a>
-</mat-card-actions>
+    <button mat-raised-button color="primary" type>Create</button>
+  </form>
+</div>

@@ -25,6 +25,7 @@ import { NgModule } from "@angular/core";
 import { HttpClientModule } from "@angular/common/http";
 import { AuthorService } from "./author.service";
 import { BookstoreService } from "./bookstore.service";
+import { BookEditComponent } from './book-edit/book-edit.component';
 
 //import { httpInterceptorProviders } from './http-interceptors';
 //import { AuthService } from './auth.service';
@@ -69,7 +70,8 @@ import { BookstoreService } from "./bookstore.service";
     BookCreateComponent,
     AuthorCreateComponent,
     BookstoreCreateComponent,
-    AuthorCreateComponent
+    AuthorCreateComponent,
+    BookEditComponent
   ],
   bootstrap: [AppComponent],
   providers: [

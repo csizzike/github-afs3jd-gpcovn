@@ -1,7 +1,7 @@
-<mat-card *ngIf="book">
+<mat-card style="background-color: #f0f9ff" *ngIf="book">
   <mat-card-header>
     <div mat-card-avatar>
-      <i class="material-icons">event</i>
+      <i class="material-icons">menu_book</i>
     </div>
     <mat-card-title>
       <b>{{book.title}}</b>
@@ -24,7 +24,7 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <a mat-button [routerLink]="['/books']">
+    <a mat-button color="primary" [routerLink]="['/books']">
       <b>Go back</b>
     </a>
   </mat-card-actions>
