@@ -1,5 +1,6 @@
 [
     {
+      "id": 1,
       "name": "Amazing bookstore for young nerds",
       "city": "New York",
       "post": "94321",
@@ -7,6 +8,7 @@
       "open": "8:00 - 16:00"
     },
     {
+      "id": 2,
       "name": "Tea and Books",
       "city": "London",
       "post": "22331",

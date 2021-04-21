@@ -7,10 +7,7 @@ const BOOK_URL = "api/books";
 
 @Injectable()
 export class BookService {
-  constructor(
-    private requestService: RequestService,
-    private http: HttpClient
-  ) {}
+  constructor(private requestService: RequestService) {}
 
   getBooks(): Observable<any> {
     const httpOptions = {
@@ -29,5 +26,23 @@ export class BookService {
     };
     const url = `${BOOK_URL}/${id}`;
     return this.requestService.get(url, httpOptions);
+  }
+
+  createBook(book: any): Observable<any> {
+    return this.requestService.post(`${BOOK_URL}/`, book);
+  }
+
+  updateBook(book: any): Observable<any> {
+    return this.requestService.put(`${BOOK_URL}/`, book);
+  }
+
+  deleteBook(id: number): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    };
+    const url = `${BOOK_URL}/${id}`;
+    return this.requestService.delete(url, httpOptions);
   }
 }
